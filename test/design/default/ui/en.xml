@@ -1,0 +1,4 @@
+<window name="en">
+  <view name="button_view" x="17" y="10" w="286" h="31" children_layout="default(r=1,c=0)"/>
+  <rich_text name="rich_text" x="17" y="51" w="286" h="98" text=""/>
+</window>

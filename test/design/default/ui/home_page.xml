@@ -1,0 +1,4 @@
+<window name="home_page">
+  <edit name="edit" x="85" y="49" w="160" h="28" auto_fix="true" tips="Please enter your text" step="2" action_text="next" min="0" max="1024"/>
+  <label name="label" x="85" y="10" w="160" h="28" text="Label"/>
+</window>

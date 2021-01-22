@@ -1,0 +1,17 @@
+printf("#################erro13#############\r\n");
+	char * outstr=(char*)malloc(1024*16);
+printf("#################erro19#############\r\n");
+	iconv_t cd=iconv_open("gb2312","unicode");
+printf("#################erro20#############\r\n");
+	char **pin=&interpret;
+printf("#################erro21#############\r\n");
+	char **pout=&outstr;
+printf("#################erro22#############\r\n");
+	memset(outstr,0,255);
+printf("#################erro23#############\r\n");
+	int len=0;
+	int len0=strlen(interpret);
+	iconv(cd,pin,&len0,pout,&len);
+	printf("%d%d%s",&len0,&len,outstr);
+printf("#################erro24#############\r\n");
+	iconv_close(cd);

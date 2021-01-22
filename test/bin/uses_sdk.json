@@ -1,0 +1,9 @@
+{
+  "compileSDK": {
+    "awtk": {
+      "path": "/home/wen/AWTK/awtk",
+      "release_id": "20121",
+      "nanovg_backend": "AGGE"
+    }
+  }
+}
