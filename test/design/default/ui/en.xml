@@ -1,4 +1,5 @@
 <window name="en">
-  <view name="button_view" x="17" y="10" w="286" h="31" children_layout="default(r=1,c=0)"/>
+  <view name="button_view" x="17" y="10" w="244" h="31" children_layout="default(r=1,c=0)"/>
   <rich_text name="rich_text" x="17" y="51" w="286" h="98" text=""/>
+  <button name="back" x="273" y="7" w="30" h="34" style:normal:icon="arrow_left_p" style:normal:round_radius="63" style:normal:font_size="18" style:normal:bg_image="arrow_left_o" style:normal:bg_image_draw_type="center" text=""/>
 </window>
