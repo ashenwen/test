@@ -1,11 +1,11 @@
 #include "awtk.h"
 #include "stdio.h"
-#include <arpa/inet.h>
-#include "unistd.h"
-#include <netdb.h>
-#include "sys/types.h"
-#include "sys/socket.h"
-#include <netinet/in.h>
+//#include <arpa/inet.h>
+//#include "unistd.h"
+//#include <netdb.h>
+//#include "sys/types.h"
+//#include "sys/socket.h"
+//#include <netinet/in.h>
 #include "cJSON.h"
 //#include "cJSON.c"
 unsigned char *base64_encode(unsigned char *str)  
@@ -117,20 +117,14 @@ int setstr(char* rep, char* temp)
 int get(char *msg,char *data,char *sign)
 {	
 	char buff[4096] = { '\0' };
-	//char rebuff[4096] = { '\0' };
-
-	//char temp[512]  = { '\0' };
-	//char* buff = malloc(4096 * sizeof(char));
-	
-	int sockfd = socket(AF_INET, SOCK_STREAM, 0);
+	socket_init();
+	/*int sockfd = socket(AF_INET, SOCK_STREAM, 0);
 	struct sockaddr_in serveraddr;
 	memset(&serveraddr, 0, sizeof(serveraddr));
 	serveraddr.sin_family = AF_INET;
 	serveraddr.sin_port = htons(80);
-
-	
-inet_pton(AF_INET, "47.106.26.194", &serveraddr.sin_addr.s_addr);
-
+inet_pton(AF_INET, "47.106.26.194", &serveraddr.sin_addr.s_addr);*/
+	int sockfd =tcp_connect ("47.106.26.194",80);
 
 memset(buff, 0, sizeof(buff));
 
@@ -146,8 +140,8 @@ snprintf(buff, sizeof(buff) - 1,
 
 
 );
-  if(connect(sockfd,(struct sockaddr *)&serveraddr,sizeof(serveraddr)) < 0)  
-        printf("connect error\n");
+ // if(connect(sockfd,(struct sockaddr *)&serveraddr,sizeof(serveraddr)) < 0)  
+       // printf("connect error\n");
 	if(write(sockfd, buff, strlen(buff))!=strlen(buff)){printf("erro");}
 	printf("\r\nbuff#############\r\n%s#############\r\n",buff);
 	char* readbuff=(char*)malloc(1024*16);
