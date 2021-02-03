@@ -6,6 +6,7 @@ widget_t* view1;
 widget_t* win;
 int i=0;
 int page;
+char booknum1[128]={'\0'};
 
 
 static ret_t init_widget(void* ctx, const void* iter) 
@@ -41,9 +42,9 @@ static ret_t on_r_click(void* ctx, event_t* e) {
 	return RET_OK;
 }
 
-void viewinit(char* page)
+void viewinit(char* page,char*booknum)
 {
- cJSON* result=getReadingPageList(page);
+ cJSON* result=getReadingPageList(page,booknum);
 	cJSON* englishtext=cJSON_GetObjectItem(result, "englishtext");
 	cJSON* chinatext=cJSON_GetObjectItem(result, "chinatext");
 	cJSON* en=cJSON_GetObjectItem(englishtext,page);
@@ -74,7 +75,7 @@ char page_str[24];
 sprintf(page_str,"p%03d",page);
 widget_destroy_children(view);
 widget_destroy_children(view1);
-viewinit(page_str);
+viewinit(page_str,booknum1);
 return RET_OK;
 }
 
@@ -86,7 +87,7 @@ char page_str[24];
 sprintf(page_str,"p%03d",page);
 widget_destroy_children(view);
 widget_destroy_children(view1);
-viewinit(page_str);
+viewinit(page_str,booknum1);
 }
 return RET_OK;
 }
@@ -94,15 +95,16 @@ return RET_OK;
 
 
 
-ret_t open_new_window(char* jgcode, char* pageId)
+ret_t open_new_window(char* jgcode, char* pageId,char*booknum)
 {	
 win = window_open("new");
 view=widget_lookup(win,"view",TRUE);
 view1=widget_lookup(win,"view1",TRUE);
+sprintf(booknum1,"%s",booknum);
 	widget_t* previous= widget_lookup(win, "button", TRUE);
         widget_t* next = widget_lookup(win, "button1", TRUE);
 	widget_on(next,EVT_CLICK,on_next_click,win);
 	widget_on(previous,EVT_CLICK,on_previous_click,win);
-viewinit("p000");
+viewinit("p001",booknum1);
 
 }
