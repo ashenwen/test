@@ -1,0 +1,8 @@
+<window name="book">
+  <rich_text name="left_en" x="18" y="19" w="85" h="205" text="RichText"/>
+  <rich_text name="left_ch" x="128" y="19" w="85" h="205" text="RichText"/>
+  <rich_text name="right_en" x="271" y="19" w="85" h="205" text="RichText"/>
+  <rich_text name="right_ch" x="381" y="19" w="85" h="205" text="RichText"/>
+  <button name="button" x="85" y="234" w="37" h="28" text="播放"/>
+  <button name="button1" x="355" y="234" w="37" h="28" text="播放"/>
+</window>

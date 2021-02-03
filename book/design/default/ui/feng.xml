@@ -1,0 +1,7 @@
+<window name="feng">
+  <image name="feng_img" x="48" y="26" w="153" h="212" draw_type="scale_auto" image="num0"/>
+  <label name="label" x="217" y="51" w="40" h="28" text="书名："/>
+  <label name="label2" x="217" y="154" w="34" h="28" text="总页数"/>
+  <label name="count_page" x="267" y="154" w="160" h="28" text="Label"/>
+  <rich_text name="bookname" x="267" y="44" w="176" h="100" text="RichText"/>
+</window>

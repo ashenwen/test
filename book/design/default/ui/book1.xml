@@ -1,0 +1,10 @@
+<window name="book1">
+  <image name="left" x="0" y="0" w="160" h="228" draw_type="scale_auto" image="num0"/>
+  <image name="right" x="233" y="0" w="160" h="228" draw_type="scale_auto" image="num0"/>
+  <rich_text name="rich_text" x="158" y="14" w="65" h="199" text="RichText"/>
+  <rich_text name="rich_text1" x="403" y="14" w="65" h="199" text="RichText"/>
+  <button name="button" x="71" y="228" w="32" h="36" text="播放"/>
+  <button name="button1" x="288" y="228" w="37" h="34" text="播放"/>
+  <button name="button2" x="442" y="249" w="38" h="13" text="下一页"/>
+  <button name="button3" x="442" y="223" w="34" h="16" text="上一页"/>
+</window>
